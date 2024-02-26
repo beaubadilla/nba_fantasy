@@ -1,3 +1,26 @@
+# 2024-02-25
+Checking for categorical features
+    1. Pos
+    2. Player-additional
+How to handle cat features?
+    Pos
+        OHE - low dimensionality. positions should have some relationship
+        Target encoding - positions should have some relationship with target
+    Player-additional: will be dropped before training
+OHE Pos
+    Just realized the positions are not just PG,G,SF,PF,C. There are combos.
+    Knowing this, I will drop pos because I don't have a good way to decide what positions
+    Maybe in the future, we will group them using a clustering method
+
+Fitted the model with just all the columns
+Result
+    - RMSE: 5.75 i.e. predictions were off by 5.75 on average
+
+Highest priority variables
+* Age
+* Number of years in league
+* Number of years on current team
+
 # Default Points Categories
 Official NBA
 Points: 1
@@ -57,6 +80,7 @@ Row
     - was injured for extended amount of time last year
     - started last year
     - expected to start
+        - maybe a way to classify this is if the starters from previous years have stayed?
     - was 1st option
     - was 2nd option
     - was 3rd option
