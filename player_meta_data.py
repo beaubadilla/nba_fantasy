@@ -4,6 +4,8 @@ import requests
 from string import Template
 import time
 
+from bs4 import BeautifulStoneSoup
+
 MAX_REQUESTS_PER_MIN = 20
 SAFE_MAX_REQUESTS_PER_MIN = MAX_REQUESTS_PER_MIN / 2
 SECS_PER_MIN = 60
@@ -34,6 +36,7 @@ def main():
 
         # Read HTML
         # Get id="meta". This will be a div
+
         # Get all paragraphs within div
         # For each paragraph
         #   If no <strong> element, skip. e.g. nicknames
